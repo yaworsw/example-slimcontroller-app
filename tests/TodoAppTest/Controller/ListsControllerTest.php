@@ -1,19 +1,19 @@
 <?php
 
 /**
- * src/TodoAppTest/Controller/HomeControllerTest.php
+ * src/TodoAppTest/Controller/ListsControllerTest.php
  *
- * A unit test for the home controller.
+ * A unit test for the lists controller.
  */
 
 namespace TodoAppTest\Controller;
 
 use Mockery as M;
 use TodoApp\Application;
-use TodoApp\Controller\HomeController;
+use TodoApp\Controller\IndexController;
 use TodoAppTest\AbstractTestCase;
 
-class HomeControllerTest extends AbstractTestCase
+class ListsControllerTest extends AbstractTestCase
 {
 
     /**
@@ -26,8 +26,8 @@ class HomeControllerTest extends AbstractTestCase
     public function indexActionRendersCorrectView()
     {
         $app = new Application(array());
-        $homeController = M::mock('TodoApp\Controller\HomeController[render]', array(&$app))->shouldAllowMockingProtectedMethods();
-        $homeController->shouldReceive('render')->once()->with('home/index', M::any());
+        $homeController = M::mock('TodoApp\Controller\ListsController[render]', array(&$app))->shouldAllowMockingProtectedMethods();
+        $homeController->shouldReceive('render')->once()->with('lists/index', M::any());
         $homeController->indexAction();
     }
 

@@ -14,7 +14,7 @@ class ApplicationTest extends AbstractTestCase
     /**
      * testPass
      *
-     * This test will always pass.
+     * This test *should* always pass.
      *
      * @test
      */
