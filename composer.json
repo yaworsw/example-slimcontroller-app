@@ -1,0 +1,15 @@
+{
+  "name": "slimcontroller/example-app",
+  "autoload": {
+    "psr-0": {
+      "TodoApp": "src/"
+    }
+  },
+  "require": {
+    "mockery/mockery":                  "0.9.1",
+    "petebrowne/slim-layout-view":      "0.3.*",
+    "phpunit/phpunit":                  "4.1.4",
+    "slim/extras":                      "2.0.3",
+    "slimcontroller/slimcontroller":    "0.4.1"
+  }
+}
