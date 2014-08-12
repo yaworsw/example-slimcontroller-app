@@ -30,9 +30,11 @@ class TodoListsController extends ApplicationController
      *
      * Display details for a specific todo list.
      */
-    public function showAction()
+    public function showAction($id)
     {
-
+        $this->render('lists/show', array(
+            'list' => TodoList::find($id)
+        ));
     }
 
     /**

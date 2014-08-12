@@ -1,1 +1,9 @@
-index
+<ul id="todo-lists">
+  <?php foreach($lists as $list): ?>
+    <li class="todo-list">
+      <a href="<?php echo $this->app->urlFor('TodoLists:show', array('id' => $list->id)); ?>">
+        <?php echo $list->name; ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>

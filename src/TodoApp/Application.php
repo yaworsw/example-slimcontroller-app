@@ -10,6 +10,7 @@
 namespace TodoApp;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+use TodoApp\View\PhpTemplateView;
 
 class Application extends \SlimController\Slim
 {
@@ -24,9 +25,21 @@ class Application extends \SlimController\Slim
     public function run()
     {
         $this->initializeDb();
+        $this->initializeView();
         if ($this->config('mode') != 'test') {
             parent::run();
         }
+    }
+
+    /**
+     * initializeView
+     *
+     * initialize a custom view
+     */
+    protected function initializeView()
+    {
+        $view = new PhpTemplateView($this);
+        $this->config('view', $view);
     }
 
     /**

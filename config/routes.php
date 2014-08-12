@@ -9,10 +9,10 @@
 
 return array(
     '/'          =>                   'Home:index',
-    '/lists'     => array('get'    => 'Lists:index',
-                          'post'   => 'Lists:create'),
-    '/lists/:id' => array('get'    => 'Lists:show',
-                          'post'   => 'Lists:edit',
-                          'delete' => 'Lists:delete'),
-    '/lists/new' =>                   'Lists:new'
+    '/lists'     => array('get'    => 'TodoLists:index',
+                          'post'   => 'TodoLists:create'),
+    '/lists/:id' => array('get'    => 'TodoLists:show',
+                          'post'   => 'TodoLists:edit',
+                          'delete' => 'TodoLists:delete'),
+    '/lists/new' =>                   'TodoLists:new'
 );
