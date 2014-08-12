@@ -19,4 +19,5 @@ return array(
     'controller.class_suffix'    => 'Controller',
     'controller.method_suffix'   => 'Action',
     'controller.template_suffix' => 'phtml',
+    'controller.param_prefix'    => ''
 );

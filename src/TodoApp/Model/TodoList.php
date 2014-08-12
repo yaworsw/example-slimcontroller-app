@@ -13,4 +13,11 @@ use Illuminate\Database\Eloquent\Model;
 class TodoList extends Model
 {
 
+    public $timestamps = false;
+
+    public function items()
+    {
+        return $this->hasMany('TodoApp\Model\TodoItem');
+    }
+
 }

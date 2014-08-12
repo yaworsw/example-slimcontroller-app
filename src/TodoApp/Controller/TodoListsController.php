@@ -9,6 +9,8 @@
 namespace TodoApp\Controller;
 
 use TodoApp\Model\TodoList;
+use TodoApp\Model\TodoItem;
+
 
 class TodoListsController extends ApplicationController
 {
@@ -33,7 +35,8 @@ class TodoListsController extends ApplicationController
     public function showAction($id)
     {
         $this->render('lists/show', array(
-            'list' => TodoList::find($id)
+            'list' => TodoList::find($id),
+            'items' => TodoItem::all()
         ));
     }
 

@@ -13,4 +13,6 @@ use Illuminate\Database\Eloquent\Model;
 class TodoItem extends Model
 {
 
+    public $timestamps = false;
+
 }

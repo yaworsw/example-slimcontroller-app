@@ -14,5 +14,7 @@ return array(
     '/lists/:id' => array('get'    => 'TodoLists:show',
                           'post'   => 'TodoLists:edit',
                           'delete' => 'TodoLists:delete'),
-    '/lists/new' =>                   'TodoLists:new'
+    '/lists/new' =>                   'TodoLists:new',
+
+    '/lists/:listId/items/:id' => array('post' => 'TodoList\\TodoItems:edit')
 );

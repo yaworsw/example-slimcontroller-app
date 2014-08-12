@@ -1,1 +1,14 @@
 <h1><?php echo $list->name; ?></h1>
+<ul id="todo-list-items">
+  <?php foreach($list->items as $item): ?>
+    <li class="todo-list-item <?php echo $item->done ? 'done': 'not-done'; ?>">
+      <?php echo $item->name; ?>
+      <form action="/lists/<?php echo $list->id ?>/items/<?php echo $item->id ?>" method="post">
+        <input type="hidden" value="<?php echo $item->done ? 'uncheck' : 'check'; ?>" name="action">
+        <button type="submit">
+          <?php echo $item->done ? 'Uncheck' : 'Check'; ?>
+        </button>
+      </form>
+    </li>
+  <?php endforeach; ?>
+</ul>
