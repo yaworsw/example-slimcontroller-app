@@ -7,4 +7,4 @@
  * can be easily found, modified, and loaded.
  */
 
-define('APP_PATH', __DIR__);
+define('APP_PATH', __DIR__ . '/..');

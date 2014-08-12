@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/../data"
+
+sqlite3 development_db.sqlite3 < seeds.sql
+sqlite3 production_db.sqlite3  < seeds.sql
+sqlite3 test_db.sqlite3        < seeds.sql

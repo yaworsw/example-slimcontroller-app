@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS todo_lists (id INTEGER PRIMARY KEY, name TEXT);
+
+CREATE TABLE IF NOT EXISTS todo_items (id INTEGER PRIMARY KEY, todo_list_id INTEGER, name TEXT, done BOOLEAN);
+

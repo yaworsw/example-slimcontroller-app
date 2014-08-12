@@ -8,7 +8,9 @@
 
 namespace TodoApp\Model;
 
-class TodoList extends AbstractModel
+use Illuminate\Database\Eloquent\Model;
+
+class TodoList extends Model
 {
 
 }

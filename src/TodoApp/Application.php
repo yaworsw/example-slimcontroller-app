@@ -9,19 +9,54 @@
 
 namespace TodoApp;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 class Application extends \SlimController\Slim
 {
 
     /**
      * run
      *
-     * For example if there is additional code needed for initialization this may
-     * be a reasonable place to put/call it.  Once initialization is complete then
-     * call the parent class's run method.
+     * For example if there is additional code needed for initialization this
+     * may be a reasonable place to put/call it.  Once initialization is
+     * complete then call the parent class's run method.
      */
     public function run()
     {
-        parent::run();
+        $this->initializeDb();
+        if ($this->config('mode') != 'test') {
+            parent::run();
+        }
+    }
+
+    /**
+     * initializeDb
+     *
+     * Connects to the database using the database config for the current
+     * application mode.
+     */
+    protected function initializeDb()
+    {
+        $config  = $this->dbConfig();
+        $capsule = new Capsule();
+        $capsule->addConnection($this->dbConfig());
+        $capsule->bootEloquent();
+    }
+
+    /**
+     * dbConfig
+     *
+     * Returns the database configuration for the current application mode.
+     */
+    protected function dbConfig()
+    {
+        $dbConfig = $this->config('database');
+        $config   = $dbConfig[$this->config('mode')];
+        if ($config) {
+            return $config;
+        } else {
+            return $config['development'];
+        }
     }
 
 }

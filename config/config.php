@@ -10,6 +10,8 @@
 use Slim\Extras\Views;
 
 return array(
+    'mode'                       => 'development',
+    'database'                   => require __DIR__ . '/database.php',
     'view'                       => '\Slim\LayoutView',
     'layout'                     => 'layouts/application.phtml',
     'templates.path'             => APP_PATH . '/templates',

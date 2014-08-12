@@ -9,11 +9,9 @@
 namespace TodoAppTest\Controller;
 
 use Mockery as M;
-use TodoApp\Application;
-use TodoApp\Controller\IndexController;
 use TodoAppTest\AbstractTestCase;
 
-class ListsControllerTest extends AbstractTestCase
+class TodoListsControllerTest extends AbstractTestCase
 {
 
     /**
@@ -25,8 +23,8 @@ class ListsControllerTest extends AbstractTestCase
      */
     public function indexActionRendersCorrectView()
     {
-        $app = new Application(array());
-        $homeController = M::mock('TodoApp\Controller\ListsController[render]', array(&$app))->shouldAllowMockingProtectedMethods();
+        $app = $this->app();
+        $homeController = M::mock('TodoApp\Controller\TodoListsController[render]', array(&$app))->shouldAllowMockingProtectedMethods();
         $homeController->shouldReceive('render')->once()->with('lists/index', M::any());
         $homeController->indexAction();
     }
