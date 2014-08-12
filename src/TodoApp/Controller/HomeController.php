@@ -19,7 +19,7 @@ class HomeController extends ApplicationController
     public function indexAction()
     {
         $this->render('home/index', array(
-
+            'title' => 'Home'
         ));
     }
 

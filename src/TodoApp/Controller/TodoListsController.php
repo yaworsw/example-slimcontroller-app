@@ -35,8 +35,7 @@ class TodoListsController extends ApplicationController
     public function showAction($id)
     {
         $this->render('lists/show', array(
-            'list' => TodoList::find($id),
-            'items' => TodoItem::all()
+            'list' => TodoList::find($id)
         ));
     }
 

@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php echo 'Title'; ?></title>
+    <title><?php echo $title ? $title . ' | ': ''; ?>Todo Slimcontroller App</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <?php echo $yield; ?>
+    <div class="container">
+      <?php echo $yield; ?>
+    </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>

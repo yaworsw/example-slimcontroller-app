@@ -49,9 +49,8 @@ class PhpTemplateView extends View
     public function render($template, $data = null)
     {
         $yield = parent::render($template, $data);
-        return parent::render($this->layoutName(), array(
-            'yield' => $yield
-        ));
+        $data['yield'] = $yield;
+        return parent::render($this->layoutName(), $data);
     }
 
     /**

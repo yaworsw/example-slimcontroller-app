@@ -3,7 +3,7 @@
 /**
  * src/TodoApp/Controller/TodoList/TodoItemsController.php
  *
- * A controller to handle crud operations on list objects.
+ * A controller to handle crud operations on items objects.
  */
 
 namespace TodoApp\Controller\TodoList;

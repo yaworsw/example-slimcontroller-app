@@ -1,9 +1,15 @@
-<ul id="todo-lists">
+<h1>Todo Lists</h1>
+<div id="todo-lists">
   <?php foreach($lists as $list): ?>
-    <li class="todo-list">
-      <a href="<?php echo $this->app->urlFor('TodoLists:show', array('id' => $list->id)); ?>">
-        <?php echo $list->name; ?>
-      </a>
-    </li>
+    <div class="todo-list">
+      <div class="name">
+        <a href="<?php echo $this->app->urlFor('TodoLists:show', array('id' => $list->id)); ?>">
+          <?php echo $list->name; ?>
+        </a>
+      </div>
+      <div class="count">
+        <?php echo $list->items()->where('done', true)->count(); ?> / <?php echo $list->items->count() ?>
+      </div>
+    </div>
   <?php endforeach; ?>
-</ul>
+</div>
