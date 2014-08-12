@@ -1,7 +1,7 @@
 <?php
 
 /**
- * src/TodoApp\Application.php
+ * src/TodoApp/Application.php
  *
  * This class extends \SlimControler\Slim so that if there is any functionality
  * that needs to be added to the application class it can be cleanly added.

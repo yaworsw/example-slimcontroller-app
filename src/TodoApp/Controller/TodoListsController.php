@@ -1,7 +1,7 @@
 <?php
 
 /**
- * src\TodoApp\Controller\ListsController.php
+ * src/TodoApp/Controller/ListsController.php
  *
  * A controller to handle crud operations on list objects.
  */
