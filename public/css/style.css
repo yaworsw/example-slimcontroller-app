@@ -39,8 +39,8 @@ a, a:visited {
   float: left;
 }
 
-#todo-lists .todo-list .count, #todo-list-items .todo-list-item .action {
-  float: right;
+#todo-lists .todo-list .count, #todo-list-items .todo-list-item .actions {
+  float: left;
 }
 
 #todo-list-items .todo-list-item.checked {
@@ -49,4 +49,10 @@ a, a:visited {
 
 #todo-list-items .todo-list-item.not-checked {
   color: red;
+}
+
+.check-uncheck-button {
+  background: none;
+  border: none;
+  width: 25px;
 }

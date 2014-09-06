@@ -1,0 +1,13 @@
+<div class="todo-list-item <?php echo $item->done ? 'checked': 'not-checked'; ?>">
+  <div class="actions">
+    <form action="<?php echo $this->app->urlFor('TodoList\\TodoItems:edit', array('listId' => $list->id, 'id' => $item->id)); ?>" method="post">
+      <input type="hidden" value="<?php echo $item->done ? 'uncheck' : 'check'; ?>" name="action">
+      <button class="<?php echo $item->done ? 'check' : 'times'; ?> check-uncheck-button" type="submit">
+        <i class="fa fa-<?php echo $item->done ? 'check' : 'times'; ?>"></i>
+      </button>
+    </form>
+  </div>
+  <div class="name">
+    <?php echo $item->name; ?>
+  </div>
+</div>
