@@ -9,6 +9,7 @@
 namespace TodoApp\View;
 
 use Slim\View;
+use Slim\Slim;
 
 class PhpTemplateView extends View
 {
@@ -25,9 +26,13 @@ class PhpTemplateView extends View
      *
      * Initialize the view.
      */
-    public function __construct($app)
+    public function __construct($app = null)
     {
-        $this->app = $app;
+        if (is_null($app)) {
+            $this->app = Slim::getInstance();
+        } else {
+            $this->app = $app;
+        }
         parent::__construct();
     }
 
