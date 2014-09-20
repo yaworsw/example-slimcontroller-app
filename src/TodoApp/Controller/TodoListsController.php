@@ -23,6 +23,7 @@ class TodoListsController extends ApplicationController
     public function indexAction()
     {
         $this->render('lists/index', array(
+            'title' => 'Todo Lists',
             'lists' => TodoList::all()
         ));
     }
@@ -34,8 +35,10 @@ class TodoListsController extends ApplicationController
      */
     public function showAction($id)
     {
+        $list = TodoList::find($id);
         $this->render('lists/show', array(
-            'list' => TodoList::find($id)
+            'title' => $list->name,
+            'list'  => $list
         ));
     }
 
