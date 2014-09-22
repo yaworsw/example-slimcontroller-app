@@ -7,7 +7,7 @@
           <?php echo $list->name; ?>
         </a>
       </div>
-      <div class="count">
+      <div class="count">&nbsp;
         <?php echo $list->items()->where('done', true)->count(); ?> / <?php echo $list->items->count() ?>
       </div>
     </div>

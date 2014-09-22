@@ -1,7 +1,9 @@
 <?php $formName = 'toggle-' . $item->id; ?>
 <div class="todo-list-item <?php echo $item->done ? 'checked': 'not-checked'; ?>">
   <div class="actions">
-    <form name="<?php echo $formName; ?>" action="<?php echo $this->app->urlFor('TodoList\\TodoItems:edit', array('listId' => $list->id, 'id' => $item->id)); ?>" method="post">
+    <form class="toggle-list-item-form" name="<?php echo $formName; ?>" action="<?php echo $this->app->urlFor('TodoList\\TodoItems:edit', array('listId' => $list->id, 'id' => $item->id)); ?>" method="post">
+      <input type="hidden" value="<?php echo $list->id; ?>" name="list-id">
+      <input type="hidden" value="<?php echo $item->id; ?>" name="item-id">
       <input type="hidden" value="<?php echo $item->done ? 'uncheck' : 'check'; ?>" name="action">
       <button class="<?php echo $item->done ? 'check' : 'times'; ?> check-uncheck-button" type="submit">
         <i class="fa fa-<?php echo $item->done ? 'check' : 'times'; ?>"></i>

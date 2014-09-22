@@ -11,5 +11,8 @@
       <?php echo $yield; ?>
     </div>
     <script src="/js/script.js"></script>
+    <?php if ($scripts) foreach ($scripts as $script): ?>
+      <script src="<?php echo $script; ?>"></script>
+    <?php endforeach; ?>
   </body>
 </html>
