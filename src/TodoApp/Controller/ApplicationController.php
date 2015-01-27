@@ -17,4 +17,14 @@ use SlimController\SlimController;
 abstract class ApplicationController extends SlimController
 {
 
+    /**
+     * constructor
+     *
+     * Initialize the controller.
+     */
+    public function __construct($app)
+    {
+        parent::__construct($app);
+    }
+
 }
